@@ -1,0 +1,1355 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    scroll-padding-top: 2rem;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*variables*/
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #000000;
+    --tertiary-color: #F9A144;
+    --text-color: #1E1E1E;
+    --sky-blue-color: #1596F5;
+
+    /*variables Text*/
+    --mega-header: 4em;
+    --mini-header: 3em;
+    --header-text: 2em;
+    --medium-text: 1.6em;
+    --small-text: 1.2em;
+    --p-text: 1em;
+    --span-text: 0.8em;
+    --link-span-text: 0.6em;
+}
+
+.Ctn {
+    width: 100%;
+    height: 100%;
+}
+
+.Relative {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+}
+
+.BgImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.Screen {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.Screen-sm {
+    height: 80vh;
+    overflow: hidden;
+}
+
+.Screen-Size {
+    padding: 5%;
+}
+
+.TopSpacing-10 {
+    padding-top: 10%;
+}
+
+.Absolute {
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+}
+
+.Overlay {
+    background-color: rgba(0, 0, 0, .8);
+    width: 100%;
+    height: 100%;
+}
+
+.HeaderContent {
+    width: 100%;
+    height: auto;
+    padding: 5%;
+}
+
+.GridLayout {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-flow: dense;
+    gap: 1em;
+}
+
+.HeaderBox {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    max-width: 40%;
+    height: 100%;
+}
+
+.HeaderBox::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text-color);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.HeaderBox::before {
+    content: "";
+    background-image: linear-gradient(45deg,
+            #FF0000, #FF7300, #FFFB00, #48FF00,
+            #FF7300, #FF0000, #FFFB00, #48FF00);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100%);
+    height: calc(100%);
+    filter: blur(10px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 1;
+}
+
+.HeaderBox img {
+    width: 20px;
+    height: auto;
+    object-fit: scale-down;
+    filter: invert(100%);
+}
+
+.HeaderBoxContent {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 5px;
+}
+
+.HeaderBoxContent h2 {
+    font-size: var(--span-text);
+    color: var(--primary-color);
+    font-weight: 500;
+    line-height: 1.5em;
+}
+
+.HeaderBoxContent p {
+    font-size: var(--link-span-text);
+    color: var(--primary-color);
+    font-weight: 500;
+    line-height: 2em;
+}
+
+.ContentSpacing {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.ColumnFlex {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.RowFlex {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.ColumnRight {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.ContentWidth-70 {
+    width: 60%;
+}
+
+.Width-100 {
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    width: 100%;
+}
+
+.TextColorWhite {
+    color: var(--primary-color);
+}
+
+.TextColorWhite h2 {
+    color: var(--tertiary-color) !important;
+    font-size: var(--header-text);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.TextColorWhite p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    line-height: 2;
+}
+
+.Btn {
+    padding: 15px 30px;
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+    width: max-content;
+    text-decoration: none;
+    font-size: var(--span-text);
+    font-weight: 300;
+}
+
+.Btn:hover {
+    color: var(--primary-color);
+}
+
+.Btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text-color);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+.Btn::before {
+    content: "";
+    background-image: linear-gradient(45deg,
+            #FF0000, #FF7300, #FFFB00, #48FF00,
+            #FF7300, #FF0000, #FFFB00, #48FF00);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100%);
+    height: calc(100%);
+    filter: blur(10px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.Btn:hover::before {
+    opacity: 1;
+}
+
+.HeaderBoxContainer {
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 0 5%;
+    gap: 1em;
+}
+
+.GlobalText {
+    font-size: var(--small-text);
+    color: var(--tertiary-color);
+    font-weight: 300;
+    line-height: 2;
+    padding: 5% 15%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+}
+
+.CenterHeader {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 70%;
+    padding-top: 5%;
+}
+
+.CenterHeader h2 {
+    font-size: var(--header-text);
+    color: var(--tertiary-color);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.CenterHeader p {
+    font-size: var(--span-text);
+    color: var(--primary-color);
+    font-weight: 300;
+}
+
+.Radius-10 {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.Radius-05 {
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.GridBox {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.GridImage {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 1s ease-in-out;
+}
+
+.GridBoxContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    position: absolute;
+    text-align: left;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .8);
+}
+
+.GridBoxContent h2 {
+    font-size: var(--medium-text);
+    color: var(--tertiary-color);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.GridBoxContent p {
+    font-size: var(--span-text);
+    color: var(--primary-color);
+    font-weight: 300;
+    line-height: 2;
+}
+
+.GridBoxContent span {
+    font-size: var(--small-text);
+    color: var(--tertiary-color);
+    font-weight: 300;
+    line-height: 2;
+}
+
+.GridBtn {
+    padding: 15px;
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-top-left-radius: 10px;
+    text-decoration: none;
+    font-size: var(--span-text);
+    font-weight: 300;
+    display: flex;
+    flex-direction: row;
+    gap: .5em;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.GridBtn:hover {
+    color: var(--primary-color);
+}
+
+.GridBtnImage {
+    width: 25px;
+    height: auto;
+    object-fit: scale-down;
+    filter: invert(100%);
+    transform: rotate(270deg);
+}
+
+.GridBtn:hover .GridBtnImage {
+    animation: BtnArrowRotate 1s linear;
+}
+
+@keyframes BtnArrowRotate {
+    0% {
+        transform: rotate(270deg);
+    }
+
+    50% {
+        transform: rotate(-270deg);
+    }
+
+    100% {
+        transform: rotate(270deg);
+    }
+}
+
+.BoxShadow {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+text {
+    font-size: var(--header-text);
+    font-weight: 700;
+    color: var(--tertiary-color);
+    mix-blend-mode: overlay;
+    text-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.HoverAnimation:hover .GridImage {
+    transform: scale(1.2);
+    transition: transform 1s ease-in-out;
+}
+
+.AboutText h3 {
+    font-size: var(--header-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 2;
+}
+
+.AboutText span {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+.ListAnimation {
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    transition: transform 0.3s ease;
+    padding: 10px;
+    transition: all 1s ease;
+}
+
+.ListAnimation:hover {
+    box-shadow: 0 0 10px 0 rgba(249, 161, 68, 0.5);
+    transition: all 0.3s ease;
+}
+
+.ListAnimation img {
+    width: 40px;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.ListAnimationContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+}
+
+.ListAnimationContent h2 {
+    font-size: var(--p-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 2;
+}
+
+.ListAnimationContent p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.ContactBox {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.ContactBox img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.FormContainer {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.FormContainer h2 {
+    font-size: var(--header-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+}
+
+.FormContainer form {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.FormContainer form input {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .8);
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 300;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border: 1px solid var(--secondary-color);
+}
+
+.FormContainer form input:active,
+.FormContainer form input:focus,
+.FormContainer form textarea:active,
+.FormContainer form textarea:focus {
+    border: 1px solid var(--tertiary-color);
+    outline: none;
+}
+
+.FormContainer form textarea {
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .8);
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 300;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.FormContainer form input:-webkit-autofill,
+.FormContainer form input:-webkit-autofill:hover,
+.FormContainer form input:-webkit-autofill:focus,
+.FormContainer form textarea:-webkit-autofill,
+.FormContainer form textarea:-webkit-autofill:hover,
+.FormContainer form textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--primary-color);
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.FormContainer input:autofill,
+.FormContainer form input:autofill:hover,
+.FormContainer form input:autofill:focus,
+.FormContainer form textarea:autofill,
+.FormContainer form textarea:autofill:hover,
+.FormContainer textarea:autofill:focus {
+    -webkit-text-fill-color: var(--primary-color);
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+.ContactText {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 0 5%;
+}
+
+.ContactText h2 {
+    font-size: var(--small-text);
+    font-weight: 500;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+.ContactText p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.ContactText span {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--tertiary-color);
+    line-height: 2;
+}
+
+.FaqsWidth {
+    width: 100%;
+}
+
+.FaqHeader {
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 5%;
+}
+
+.FaqHeader h2 {
+    font-size: var(--header-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.5;
+}
+
+.FaqHeader p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.FaqList {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.FaqListItem {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 10px;
+}
+
+.FaqListItem:hover {
+    box-shadow: 0 0 10px 0 rgba(249, 161, 68, 0.5);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+}
+
+.FaqListItemBox {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.FaqListItemBox h3 {
+    font-size: var(--p-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.5;
+}
+
+.FaqListItemBoxDropDown {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.FaqListItemBoxDropDown p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.FaqCtn {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.ImageCtn {
+    width: 60%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.ImageCtn img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.UniqueImageCtn {
+    width: 100%;
+    max-width: 30%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.UniqueImageCtn img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+.UniqueTextCtn {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.UniqueTextCtn h2 {
+    font-size: var(--small-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.5;
+}
+
+.UniqueTextCtn p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.UniqueGrid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+    gap: 1em;
+}
+
+.UniqueGridBox {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.UniqueGridBox:hover {
+    box-shadow: 0 0 10px 0 rgba(249, 161, 68, 0.5);
+    transition: all 0.3s ease;
+}
+
+.UniqueGridBox img {
+    width: 30px;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.UniqueGridBoxItem {
+    width: 100%;
+    height: auto;
+}
+
+.UniqueGridBoxItem h2 {
+    font-size: var(--p-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.5;
+}
+
+.UniqueGridBoxItem p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.UniqueReverseImageCtn {
+    width: 100%;
+    max-width: 30%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+}
+
+.UniqueReverseImageCtn img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.UniqueReverseTextCtn {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 5%;
+}
+
+.UniqueReverseTextCtn h2 {
+    font-size: var(--small-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.5;
+}
+
+.UniqueReverseTextCtn p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.UniqueReverseGrid {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-flow: dense;
+    gap: 1em;
+}
+
+.UniqueReverseGridBox {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto 0;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
+    transition: all 0.3s ease;
+}
+
+.UniqueReverseGridBox:hover {
+    box-shadow: 0 0 10px 0 rgba(249, 161, 68, 0.5);
+    transition: all 0.3s ease;
+}
+
+.UniqueReverseGridBox img {
+    width: 30px;
+    height: auto;
+    object-fit: scale-down;
+}
+
+.UniqueReverseGridBoxItem {
+    width: 100%;
+    height: auto;
+}
+
+.UniqueReverseGridBoxItem h2 {
+    font-size: var(--p-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.5;
+}
+
+.UniqueReverseGridBoxItem p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+
+}
+
+.UniqueServiceHeader {
+    width: 100%;
+    max-width: 70%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: linear-gradient(center, red, green);
+}
+
+.UniqueServiceHeader h2 {
+    font-size: var(--mega-header);
+    font-weight: 700;
+    color: var(--tertiary-color) !important;
+    line-height: 2;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.UniqueServiceHeader p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.UniqueGridBtn {
+    width: max-content;
+    height: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--tertiary-color);
+    margin-left: auto;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-size: var(--span-text);
+    font-weight: 500;
+}
+
+.UniqueGridBtn:hover {
+    color: var(--tertiary-color);
+    transition: all 0.3s ease;
+}
+
+.GeneralImg {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.GeneralFlexText {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.GeneralFlexText span {
+    font-size: var(--link-span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.GeneralFlexText h2 {
+    font-size: var(--header-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+}
+
+.GeneralFlexText p {
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.ServiceFooterBox {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-flow: dense;
+    gap: 1em;
+}
+
+.ServiceFooterContent {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.ServiceFooterContent:hover {
+    box-shadow: 0 0 10px 0 rgba(249, 161, 68, 0.5);
+    transition: all 0.3s ease;
+}
+
+.ServiceFooterContent h3 {
+    font-size: var(--span-text);
+    font-weight: 500;
+    color: var(--tertiary-color);
+    line-height: 1.5;
+}
+
+.ServiceFooterContent p {
+    font-size: var(--link-span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+    line-height: 2;
+}
+
+.TechStack {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-auto-flow: dense;
+    gap: 1em;
+}
+
+.TechStackBox {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.TechStackBox:hover {
+    box-shadow: 0 0 10px 0 rgba(249, 161, 68, 0.5);
+    transition: all 0.3s ease;
+}
+
+.TechStackBox p {
+    text-align: center;
+    font-size: var(--span-text);
+    font-weight: 300;
+    color: var(--primary-color);
+}
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 1280px) {
+
+    .UniqueServiceHeader {
+        width: 100%;
+    }
+
+    .UniqueServiceHeader h2 {
+        font-size: var(--mini-header);
+    }
+
+    .slideInNavigation.active {
+        max-width: 80%;
+    }
+
+    .slideInNavigationContainer {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        display: flex;
+        margin: auto;
+    }
+
+    .slideInNavSection {
+        height: 200px;
+    }
+
+}
+
+@media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.366) {
+
+    .UniqueServiceHeader h2 {
+        font-size: var(--header-text);
+    }
+
+    .ContactBox img {
+        height: 100%;
+    }
+
+    .ContentWidth-70 {
+        width: 100%;
+    }
+
+    .RowFlex {
+        flex-direction: column;
+    }
+
+    .UniqueImageCtn {
+        display: none;
+    }
+
+    .UniqueReverseImageCtn {
+        display: none;
+    }
+
+    .ContactText {
+        padding: 0%;
+    }
+
+    .FormContainer h2 {
+        margin-top: 10%;
+    }
+
+    .ImageCtn img {
+        display: none;
+    }
+
+    .slideInNavSection {
+        height: 150px;
+    }
+
+    .slideInNavigation.active {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 0.600) {
+
+    .slideInNavigation.active {
+        max-width: 100%;
+    }
+
+    .slideInNavSection {
+        height: 150px;
+    }
+
+    .ContactBox img {
+        height: 100%;
+    }
+
+    .ContentWidth-70 {
+        width: 100%;
+    }
+
+    .RowFlex {
+        flex-direction: column;
+    }
+
+    .UniqueImageCtn {
+        display: none;
+    }
+
+    .UniqueReverseImageCtn {
+        display: none;
+    }
+
+    .ContactText {
+        padding: 0%;
+    }
+
+    .FormContainer h2 {
+        margin-top: 10%;
+    }
+
+    .ImageCtn img {
+        display: none;
+    }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 912px) {
+
+    .HeaderBox {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .HeaderBoxContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 768px) {
+
+    .GridImage {
+        height: 250px;
+    }
+
+    .UniqueGrid {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+    .UniqueReverseGrid {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+    }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 600px) {
+
+    .HeaderBoxContainer {
+        display: none;
+    }
+
+    .GlobalText {
+        padding: 5%;
+    }
+
+    .copyright {
+        flex-direction: column;
+    }
+
+    .ListAnimation img {
+        margin-right: auto;
+    }
+
+    .ServiceFooterBox {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+    .CenterHeader {
+        width: 100%;
+        max-width: 100%;
+        padding: 5%;
+    }
+
+    .FormContainer h2 {
+        margin-top: 15%;
+    }
+
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (max-width: 490px) {
+
+    .footerLinks {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        grid-auto-flow: dense;
+        gap: 1em;
+    }
+
+}
