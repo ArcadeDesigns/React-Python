@@ -80,7 +80,7 @@ export default function Navbar() {
                 materials, optimizing your supply chain for maximum efficiency.
               </p>
 
-              <a className="Btn" href="/contact-us">
+              <a className="Btn" href="https://logistics.quinndaisies.com/">
                 Explore Our Logistics Services
               </a>
             </div>
@@ -131,9 +131,17 @@ export default function Navbar() {
         </div>
       </div>
 
-      <div className={`responsiveNavigationScreen ${isResponsiveMenuOpen ? 'active' : ''}`}>
+      <div
+        className={`responsiveNavigationScreen ${
+          isResponsiveMenuOpen ? "active" : ""
+        }`}
+      >
         <div className="responsiveNavigationScreenContainer">
-          <div className="responsiveOpenMenuBtn" id="closeresponsivemenu" onClick={toggleResponsiveMenu}>
+          <div
+            className="responsiveOpenMenuBtn"
+            id="closeresponsivemenu"
+            onClick={toggleResponsiveMenu}
+          >
             <img
               src="https://res.cloudinary.com/quinn-daisies-platform/image/upload/v1729543690/Quinn%20Daisies%20Tech/Close_5_a8rfds.png"
               alt="Close menu"
